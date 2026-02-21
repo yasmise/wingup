@@ -262,3 +262,23 @@ wstring stringReplace(wstring subject, const wstring& search, const wstring& rep
 	}
 	return subject;
 }
+
+void safeLaunchAsUser(const std::wstring& prog2Launch)
+{
+	wchar_t winDir[MAX_PATH];
+	if (GetWindowsDirectory(winDir, MAX_PATH) == 0) return;
+	std::wstring explorerPath = std::wstring(winDir) + L"\\explorer.exe";
+
+	wchar_t prog2LaunchDir[MAX_PATH];
+	lstrcpy(prog2LaunchDir, prog2Launch.c_str());
+	::PathRemoveFileSpec(prog2LaunchDir);
+
+	::ShellExecute(
+		NULL,
+		L"open",
+		explorerPath.c_str(), // Trusted path
+		prog2Launch.c_str(),  // Target
+		prog2LaunchDir,
+		SW_SHOWNORMAL
+	);
+}

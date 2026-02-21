@@ -65,3 +65,4 @@ std::wstring GetLastErrorAsString(DWORD errorCode);
 std::wstring stringToUpper(std::wstring strToConvert);
 std::wstring stringToLower(std::wstring strToConvert);
 std::wstring stringReplace(std::wstring subject, const std::wstring& search, const std::wstring& replace);
+void safeLaunchAsUser(const std::wstring& prog2Launch);

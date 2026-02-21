@@ -1469,9 +1469,6 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR lpszCmdLine, int)
 			return -1;
 		}
 		wstring prog2Launch = params[0];
-		wchar_t prog2LaunchDir[MAX_PATH];
-		lstrcpy(prog2LaunchDir, prog2Launch.c_str());
-		::PathRemoveFileSpec(prog2LaunchDir);
 		wstring destPathRoot = params[1];
 
 #ifdef _DEBUG
@@ -1502,7 +1499,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR lpszCmdLine, int)
 			deleteFileOrFolder(destPath);
 		}
 
-		::ShellExecute(NULL, L"open", prog2Launch.c_str(), NULL, prog2LaunchDir, SW_SHOWNORMAL);
+		safeLaunchAsUser(prog2Launch);
 
 		return 0;
 	}
@@ -1654,7 +1651,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR lpszCmdLine, int)
 			}
 		}
 
-		::ShellExecute(NULL, L"open", prog2Launch.c_str(), NULL, prog2LaunchDir, SW_SHOWNORMAL);
+		safeLaunchAsUser(prog2Launch);
 
 		return 0;
 	}
