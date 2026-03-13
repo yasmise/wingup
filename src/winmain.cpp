@@ -156,7 +156,7 @@ Update mode:\r\n\
 \r\n\
 gup [-vVERSION_VALUE] [-infoUrl=URL] [-chkCertKeyId=CERT_KEYID]\r\n\
 \r\n\
-    -chkCert4InfoXML : Enable signature check for XML (XMLDsig) returned from server.\r\n\
+    -chkCert4InfoXML : Enable signature check for XML (XMLDSig) returned from server.\r\n\
                        Enable this when the server signs the XML; it ensure the XML\r\n\
                        has not been altered or hijacked.\r\n\
     -chkCertKeyId4XML= : Use the certificate Key ID for authentication. If ignored,\r\n\
@@ -980,6 +980,8 @@ bool downloadBinary(const wstring& urlFrom, const wstring& destTo, const wstring
 			curl_easy_setopt(curl, CURLOPT_PROXYPORT, proxyServerInfo.second);
 			curl_easy_setopt(curl, CURLOPT_PROXYAUTH, CURLAUTH_ANY);
 		}
+
+		curl_easy_setopt(curl, CURLOPT_SSL_OPTIONS, CURLSSLOPT_REVOKE_BEST_EFFORT);
 
 		res = curl_easy_perform(curl);
 
