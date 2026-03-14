@@ -1125,6 +1125,8 @@ bool getUpdateInfo(const string& info2get, const GupParameters& gupParams, const
 			curl_easy_setopt(curl, CURLOPT_PROXYAUTH, CURLAUTH_ANY);
 		}
 
+		curl_easy_setopt(curl, CURLOPT_SSL_OPTIONS, CURLSSLOPT_REVOKE_BEST_EFFORT);
+
 		res = curl_easy_perform(curl);
 
 		curl_easy_cleanup(curl);
