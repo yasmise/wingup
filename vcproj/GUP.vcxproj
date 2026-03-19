@@ -134,8 +134,8 @@
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>libcurl_a_debug.lib;Ws2_32.lib;Wldap32.lib;Crypt32.lib;Normaliz.lib;Secur32.lib;ZipLib.lib;zlib.lib;lzma.lib;bzip2.lib;comctl32.lib;shlwapi.lib;wintrust.lib;Sensapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\curl\builds\libcurl-vc15-x86-debug-static-ipv6-sspi-schannel\lib;Bin\x86\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libcurl-d.lib;iphlpapi.lib;Ws2_32.lib;Wldap32.lib;Crypt32.lib;Normaliz.lib;Secur32.lib;ZipLib.lib;zlib.lib;lzma.lib;bzip2.lib;comctl32.lib;shlwapi.lib;wintrust.lib;Sensapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\curl\build\x86\lib\Debug;Bin\x86\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>DebugFastLink</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
@@ -163,8 +163,8 @@
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>libcurl_a_debug.lib;Ws2_32.lib;Wldap32.lib;Crypt32.lib;Normaliz.lib;Secur32.lib;ZipLib.lib;zlib.lib;lzma.lib;bzip2.lib;comctl32.lib;shlwapi.lib;wintrust.lib;Sensapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\curl\builds\libcurl-vc15-x64-debug-static-ipv6-sspi-schannel\lib;Bin\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libcurl-d.lib;iphlpapi.lib;Ws2_32.lib;Wldap32.lib;Crypt32.lib;Normaliz.lib;Secur32.lib;ZipLib.lib;zlib.lib;lzma.lib;bzip2.lib;comctl32.lib;shlwapi.lib;wintrust.lib;Sensapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\curl\build\x64\lib\Debug;Bin\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>DebugFastLink</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
@@ -191,8 +191,8 @@
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>libcurl_a_debug.lib;Ws2_32.lib;Wldap32.lib;Crypt32.lib;Normaliz.lib;Secur32.lib;ZipLib.lib;zlib.lib;lzma.lib;bzip2.lib;comctl32.lib;shlwapi.lib;wintrust.lib;Sensapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\curl\builds\libcurl-vc15-ARM64-debug-static-ipv6-sspi-schannel\lib;Bin\arm64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libcurl-d.lib;iphlpapi.lib;Ws2_32.lib;Wldap32.lib;Crypt32.lib;Normaliz.lib;Secur32.lib;ZipLib.lib;zlib.lib;lzma.lib;bzip2.lib;comctl32.lib;shlwapi.lib;wintrust.lib;Sensapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\curl\build\ARM64\lib\Debug;Bin\arm64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>DebugFastLink</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
@@ -222,8 +222,8 @@
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>libcurl_a.lib;Ws2_32.lib;Wldap32.lib;Crypt32.lib;Normaliz.lib;Secur32.lib;ZipLib.lib;zlib.lib;lzma.lib;bzip2.lib;comctl32.lib;shlwapi.lib;wintrust.lib;Sensapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\curl\builds\libcurl-vc15-x86-release-static-ipv6-sspi-schannel\lib;Bin\x86\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libcurl.lib;iphlpapi.lib;Ws2_32.lib;Wldap32.lib;Crypt32.lib;Normaliz.lib;Secur32.lib;ZipLib.lib;zlib.lib;lzma.lib;bzip2.lib;comctl32.lib;shlwapi.lib;wintrust.lib;Sensapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\curl\build\x86\lib\Release;Bin\x86\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
@@ -237,7 +237,6 @@ copy ..\src\ConfigFiles\getDownLoadUrl.php ..\bin\getDownLoadUrl.php
 copy ..\LICENSE ..\bin\LICENSE
 copy ..\README.md ..\bin\README.md
 copy ..\resources\updater.ico ..\bin\updater.ico
-copy ..\curl\builds\libcurl-vc15-x86-release-dll-ipv6-sspi-schannel\bin\libcurl.dll ..\bin\libcurl.dll
 xcopy ..\src\translations ..\bin\translations\ /S /Y /E
 del ..\bin\GUP.iobj
 del ..\bin\GUP.ipdb</Command>
@@ -266,8 +265,8 @@ del ..\bin\GUP.ipdb</Command>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>libcurl_a.lib;Ws2_32.lib;Wldap32.lib;Crypt32.lib;Normaliz.lib;Secur32.lib;ZipLib.lib;zlib.lib;lzma.lib;bzip2.lib;comctl32.lib;shlwapi.lib;wintrust.lib;Sensapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\curl\builds\libcurl-vc15-x64-release-static-ipv6-sspi-schannel\lib;Bin\x64\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libcurl.lib;iphlpapi.lib;Ws2_32.lib;Wldap32.lib;Crypt32.lib;Normaliz.lib;Secur32.lib;ZipLib.lib;zlib.lib;lzma.lib;bzip2.lib;comctl32.lib;shlwapi.lib;wintrust.lib;Sensapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\curl\build\x64\lib\Release;Bin\x64\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
@@ -280,7 +279,6 @@ copy ..\src\ConfigFiles\gup.xml ..\bin64\gup.xml
 copy ..\src\ConfigFiles\getDownLoadUrl.php ..\bin64\getDownLoadUrl.php
 copy ..\LICENSE ..\bin64\LICENSE
 copy ..\README.md ..\bin64\README.md
-copy ..\curl\builds\libcurl-vc15-x64-release-dll-ipv6-sspi-schannel\bin\libcurl.dll ..\bin64\libcurl.dll
 xcopy ..\src\translations ..\bin64\translations\  /S /Y /E
 del ..\bin64\GUP.iobj
 del ..\bin64\GUP.ipdb</Command>
@@ -309,8 +307,8 @@ del ..\bin64\GUP.ipdb</Command>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>libcurl_a.lib;Ws2_32.lib;Wldap32.lib;Crypt32.lib;Normaliz.lib;Secur32.lib;ZipLib.lib;zlib.lib;lzma.lib;bzip2.lib;comctl32.lib;shlwapi.lib;Shell32.lib;wintrust.lib;Sensapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\curl\builds\libcurl-vc15-ARM64-release-static-ipv6-sspi-schannel\lib;Bin\arm64\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libcurl.lib;iphlpapi.lib;Ws2_32.lib;Wldap32.lib;Crypt32.lib;Normaliz.lib;Secur32.lib;ZipLib.lib;zlib.lib;lzma.lib;bzip2.lib;comctl32.lib;shlwapi.lib;Shell32.lib;wintrust.lib;Sensapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\curl\build\ARM64\lib\Release;Bin\arm64\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
@@ -323,7 +321,6 @@ copy ..\src\ConfigFiles\gup.xml ..\binarm64\gup.xml
 copy ..\src\ConfigFiles\getDownLoadUrl.php ..\binarm64\getDownLoadUrl.php
 copy ..\LICENSE ..\binarm64\LICENSE
 copy ..\README.md ..\binarm64\README.md
-copy ..\curl\builds\libcurl-vc15-ARM64-release-dll-ipv6-sspi-schannel\bin\libcurl.dll ..\binarm64\libcurl.dll
 xcopy ..\src\translations ..\binarm64\translations\  /S /Y /E</Command>
     </PostBuildEvent>
     <PreLinkEvent>
